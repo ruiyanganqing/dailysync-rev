@@ -71,7 +71,7 @@ export const getGaminCNClient = async (): Promise<GarminClientType> => {
 export const migrateGarminCN2GarminGlobal = async (count = 200) => {
     const actIndex = Number(GARMIN_MIGRATE_START) ?? 0;
     // const actPerGroup = 10;
-    const totalAct = 200;
+    const totalAct = 10;
 
     const clientCN = await getGaminCNClient();
     const clientGlobal = await getGaminGlobalClient();
