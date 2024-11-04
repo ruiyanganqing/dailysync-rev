@@ -71,13 +71,13 @@ export const getGaminCNClient = async (): Promise<GarminClientType> => {
 export const migrateGarminCN2GarminGlobal = async (count = 200) => {
     const actIndex = Number(GARMIN_MIGRATE_START) ?? 0;
     // const actPerGroup = 10;
-    const totalAct = Number(GARMIN_MIGRATE_NUM) ?? count;
+    const totalAct = 200;
 
     const clientCN = await getGaminCNClient();
     const clientGlobal = await getGaminGlobalClient();
 
     const actSlices = await clientCN.getActivities(actIndex, totalAct);
-    console.log(`totalAct =   【 ${totalAct} 】`);
+   
     // only running
     const runningActs = _.filter(actSlices, { activityType: { typeKey: 'running' } });
 
