@@ -3,8 +3,8 @@ name: Migrate Garmin CN to Garmin Global
 on:
   workflow_dispatch:
   schedule:
-    # 20 分钟一次
-    - cron: "*/10 * * * *"
+    # 4h 一次
+    - cron: "0 */4 * * *"
   push:
     branches:
       - main
