@@ -2,7 +2,13 @@ name: Migrate Garmin CN to Garmin Global
 
 on:
   workflow_dispatch:
-
+  schedule:
+    # 20 分钟一次
+    - cron: "*/10 * * * *"
+  push:
+    branches:
+      - main
+  
 env:
   BARK_KEY: ${{ secrets.BARK_KEY }}
   GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
