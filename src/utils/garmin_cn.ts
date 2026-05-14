@@ -80,7 +80,8 @@ export const migrateGarminCN2GarminGlobal = async (count = 200) => {
    
     // only running and treadmill_running
     //const runningActs = _.filter(actSlices, { activityType: { typeKey: 'running' } });
-    const runningActs = _.filter(actSlices, act => act.activityType.typeKey === 'running' || act.activityType.typeKey === 'treadmill_running' || act.activityType.typeKey === 'track_running'|| act.activityType.typeKey === 'hiking');
+    const runningActs = _.filter(actSlices, act => act.activityType.typeKey === 'running' || act.activityType.typeKey === 'treadmill_running' || 
+                                                    act.activityType.typeKey === 'track_running'|| act.activityType.typeKey === 'hiking' || act.activityType.typeKey === 'walking' );
     //const runningActs = actSlices;
     for (let j = 0; j < runningActs.length; j++) {
         const act = runningActs[j];
